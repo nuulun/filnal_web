@@ -1,0 +1,107 @@
+
+
+  body[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: #0d6efd;
+    --header-text: #ffffff;
+    --footer-bg: #212529;
+    --footer-text: #ffffff;
+    --table-bg: #ffffff;
+    --table-text: #000000;
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --btn-bg: #0d6efd;
+    --btn-text: #ffffff;
+    --item-panel: #ffffff;
+    
+  }
+
+  body[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --header-bg: #1f1f1f;
+    --header-text: #ffffff;
+    --footer-bg: #1f1f1f;
+    --footer-text: #ffffff;
+    --table-bg: #1f1f1f;
+    --table-text: #eee;
+    --input-bg: #1f1f1f;
+    --input-text: #ffffff;
+    --btn-bg: #0d6efd;
+    --btn-text: #ffffff;
+    
+    --item-panel: #1f1f1f;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  header.navbar {
+    background-color: var(--header-bg) ;
+  }
+
+  header.navbar a,
+  header.navbar .navbar-brand {
+    color: var(--header-text) ;
+  }
+
+  footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+  }
+
+  table {
+    background-color: var(--table-bg);
+    color: var(--table-text);
+  }
+
+  table thead {
+    background-color: #333;
+    color: var(--table-text);
+  }
+
+  input, select {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid #555;
+  }
+
+  input:focus, select:focus {
+    border-color: #0d6efd;
+    outline: none;
+  }
+
+  button, .btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+  }
+
+  button:hover, .btn:hover {
+    opacity: 0.9;
+  }
+
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+  .card {
+    border-radius: 15px;
+  }
+
+  footer {
+    margin-top: 50px;
+  }
+
+  #scrollTopBtn {
+    margin-top: 10px;
+  }
