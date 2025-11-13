@@ -35,6 +35,26 @@
 
   <main class="container my-5">
     <h2 class="text-center mb-4">Live Flight Board</h2>
+    <div id="book-flight" class="py-5" style="background-color: var(--bg-color);">
+      <div class="container mb-5" style="background-color: var(--bg-color);">
+        <div class="row" style="display: flex;">
+         <div class="col-md-3 " style="display: flex; align-items: center;" >
+          <button id="todaybtn" class="rounded" style="width: 100%; height: 100%;">Today</button>
+         </div>
+          <div class="col-md-3 " style="display: flex; align-items: center;" >
+          <button  id="tomorowbtn" class="rounded" style="width: 100%; height: 100%;">Tomorow</button>
+         </div>
+         <div class="col-md-3">
+          <input type="date" class="form-control" id="departureBoard" >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Date is required.</div>
+        </div>
+        <div class="col-md-3 " style="display: flex; align-items: center;" >
+          <button  id="searchBoardbtn" class="rounded" style="width: 50%; height: 100%;">Search</button>
+         </div>
+        </div>
+      </div>
+    </div>
     <div class="table-responsive">
     <table class="table table-striped text-center table-dark tab">
       <thead class="table-dark">
