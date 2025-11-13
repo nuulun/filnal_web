@@ -1,7 +1,6 @@
 let theme;
 
 $(document).ready(function() {
-  localStorage.clear()
   const flightsDefault = [
   { code: "AF101", from: "Almaty", to: "Astana", date: "2025-12-01", time: "09:45", status: "On Time", seats: { economy: 35, business: 10, first: 5 } },
   { code: "AF432", from: "Almaty", to: "Astana", date: "2025-11-13", time: "09:45", status: "On Time", seats: { economy: 35, business: 10, first: 5 } },
@@ -258,3 +257,4 @@ $(document).ready(function() {
       
   });
 ;
+
