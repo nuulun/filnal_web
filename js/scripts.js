@@ -1,7 +1,12 @@
+let theme;
+
 $(document).ready(function() {
-  
+  localStorage.clear()
   const flightsDefault = [
   { code: "AF101", from: "Almaty", to: "Astana", date: "2025-12-01", time: "09:45", status: "On Time", seats: { economy: 35, business: 10, first: 5 } },
+  { code: "AF432", from: "Almaty", to: "Astana", date: "2025-11-13", time: "09:45", status: "On Time", seats: { economy: 35, business: 10, first: 5 } },
+  { code: "AF444", from: "Almaty", to: "Astana", date: "2025-11-14", time: "09:45", status: "On Time", seats: { economy: 35, business: 10, first: 5 } },
+
   { code: "AF203", from: "Astana", to: "Aktobe", date: "2025-11-15", time: "12:20", status: "Boarding", seats: { economy: 40, business: 8, first: 4 } },
   { code: "AF502", from: "Taraz", to: "Aktau", date: "2025-11-25", time: "16:30", status: "Delayed", seats: { economy: 10, business: 10, first: 6 } },
   { code: "AF601", from: "Aktobe", to: "Astana", date: "2025-12-01", time: "08:00", status: "On Time", seats: { economy: 25, business: 15, first: 8 } },
@@ -60,6 +65,72 @@ $(document).ready(function() {
       themeToggle.text(newTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode");
     });
   }
+
+   $("#book-flight").on('click', '#todaybtn', function() {
+      const today = new Date().toISOString().split('T')[0]
+      console.log(today);
+      const flights = JSON.parse(localStorage.getItem('flights'));
+      const matchingFlights = flights.filter(f => 
+        f.date=== today
+    );
+      $('#flightTable').empty();
+      if ($("#flightTable").length) {
+      matchingFlights.forEach(f => {
+        $("#flightTable").append(`
+          <tr>
+            <td>${f.code}</td><td>${f.from}</td><td>${f.to}</td><td>${f.date}</td>
+            <td>${f.time}</td><td>${f.status}</td>
+          </tr>
+        `);
+      });
+    }
+   })
+
+
+   $("#book-flight").on('click', '#tomorowbtn', function() {
+     const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+  
+
+      const formatted = tomorrow.toISOString().split('T')[0];
+      console.log(formatted)
+      const flights = JSON.parse(localStorage.getItem('flights'));
+      const matchingFlights = flights.filter(f => 
+        f.date=== formatted
+    );
+      $('#flightTable').empty();
+      if ($("#flightTable").length) {
+      matchingFlights.forEach(f => {
+        $("#flightTable").append(`
+          <tr>
+            <td>${f.code}</td><td>${f.from}</td><td>${f.to}</td><td>${f.date}</td>
+            <td>${f.time}</td><td>${f.status}</td>
+          </tr>
+        `);
+      });
+    }
+   })
+
+   $("#book-flight").on('click', '#searchBoardbtn', function() {
+     const dateSearch = $("#departureBoard").val();
+  
+
+      const flights = JSON.parse(localStorage.getItem('flights'));
+      const matchingFlights = flights.filter(f => 
+        f.date=== dateSearch
+    );
+      $('#flightTable').empty();
+      if ($("#flightTable").length) {
+      matchingFlights.forEach(f => {
+        $("#flightTable").append(`
+          <tr>
+            <td>${f.code}</td><td>${f.from}</td><td>${f.to}</td><td>${f.date}</td>
+            <td>${f.time}</td><td>${f.status}</td>
+          </tr>
+        `);
+      });
+    }
+   })
 
     
 
